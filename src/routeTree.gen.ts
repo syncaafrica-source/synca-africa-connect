@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as BuildersIndexRouteImport } from './routes/builders/index'
+import { Route as BuildersOpenSourceRouteImport } from './routes/builders/open-source'
 import { Route as BuildersProjectsRouteImport } from './routes/builders/projects'
 import { Route as CommunitiesIndexRouteImport } from './routes/communities/index'
 import { Route as CommunitiesCertifiedRouteImport } from './routes/communities/certified'
@@ -43,6 +44,11 @@ const BuildersIndexRoute = BuildersIndexRouteImport.update({
   path: '/builders/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BuildersOpenSourceRoute = BuildersOpenSourceRouteImport.update({
+  id: '/builders/open-source',
+  path: '/builders/open-source',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BuildersProjectsRoute = BuildersProjectsRouteImport.update({
   id: '/builders/projects',
   path: '/builders/projects',
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
+  '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
   '/builders/': typeof BuildersIndexRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
+  '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
   '/builders': typeof BuildersIndexRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
+  '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
   '/builders/': typeof BuildersIndexRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/programs'
+    | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
     | '/builders/'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/programs'
+    | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
     | '/builders'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/programs'
+    | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
     | '/builders/'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ProgramsRoute: typeof ProgramsRoute
+  BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
   BuildersProjectsRoute: typeof BuildersProjectsRoute
   CommunitiesCertifiedRoute: typeof CommunitiesCertifiedRoute
   BuildersIndexRoute: typeof BuildersIndexRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BuildersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/builders/open-source': {
+      id: '/builders/open-source'
+      path: '/builders/open-source'
+      fullPath: '/builders/open-source'
+      preLoaderRoute: typeof BuildersOpenSourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/builders/projects': {
       id: '/builders/projects'
       path: '/builders/projects'
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ProgramsRoute: ProgramsRoute,
+  BuildersOpenSourceRoute: BuildersOpenSourceRoute,
   BuildersProjectsRoute: BuildersProjectsRoute,
   CommunitiesCertifiedRoute: CommunitiesCertifiedRoute,
   BuildersIndexRoute: BuildersIndexRoute,
