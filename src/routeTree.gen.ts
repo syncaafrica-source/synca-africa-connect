@@ -17,6 +17,7 @@ import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as BuildersIndexRouteImport } from './routes/builders/index'
 import { Route as BuildersOpenSourceRouteImport } from './routes/builders/open-source'
@@ -64,6 +65,11 @@ const ProgramsRoute = ProgramsRouteImport.update({
   path: '/programs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StoriesRoute = StoriesRouteImport.update({
+  id: '/stories',
+  path: '/stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
@@ -104,6 +110,7 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
@@ -137,6 +145,7 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
@@ -155,6 +164,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/programs'
+    | '/stories'
     | '/team'
     | '/builders/open-source'
     | '/builders/projects'
@@ -171,6 +181,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/programs'
+    | '/stories'
     | '/team'
     | '/builders/open-source'
     | '/builders/projects'
@@ -187,6 +198,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/programs'
+    | '/stories'
     | '/team'
     | '/builders/open-source'
     | '/builders/projects'
@@ -204,6 +216,7 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   ProgramsRoute: typeof ProgramsRoute
+  StoriesRoute: typeof StoriesRoute
   TeamRoute: typeof TeamRoute
   BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
   BuildersProjectsRoute: typeof BuildersProjectsRoute
@@ -270,6 +283,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stories': {
+      id: '/stories'
+      path: '/stories'
+      fullPath: '/stories'
+      preLoaderRoute: typeof StoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team': {
       id: '/team'
       path: '/team'
@@ -324,6 +344,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   ProgramsRoute: ProgramsRoute,
+  StoriesRoute: StoriesRoute,
   TeamRoute: TeamRoute,
   BuildersOpenSourceRoute: BuildersOpenSourceRoute,
   BuildersProjectsRoute: BuildersProjectsRoute,
