@@ -10,33 +10,232 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ConfRouteImport } from './routes/conf'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as OpportunitiesRouteImport } from './routes/opportunities'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as StoriesRouteImport } from './routes/stories'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as BuildersIndexRouteImport } from './routes/builders/index'
+import { Route as BuildersOpenSourceRouteImport } from './routes/builders/open-source'
+import { Route as BuildersProjectsRouteImport } from './routes/builders/projects'
+import { Route as CommunitiesIndexRouteImport } from './routes/communities/index'
+import { Route as CommunitiesCertifiedRouteImport } from './routes/communities/certified'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfRoute = ConfRouteImport.update({
+  id: '/conf',
+  path: '/conf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesRoute = OpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoriesRoute = StoriesRouteImport.update({
+  id: '/stories',
+  path: '/stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildersIndexRoute = BuildersIndexRouteImport.update({
+  id: '/builders/',
+  path: '/builders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildersOpenSourceRoute = BuildersOpenSourceRouteImport.update({
+  id: '/builders/open-source',
+  path: '/builders/open-source',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildersProjectsRoute = BuildersProjectsRouteImport.update({
+  id: '/builders/projects',
+  path: '/builders/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunitiesIndexRoute = CommunitiesIndexRouteImport.update({
+  id: '/communities/',
+  path: '/communities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunitiesCertifiedRoute = CommunitiesCertifiedRouteImport.update({
+  id: '/communities/certified',
+  path: '/communities/certified',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/conf': typeof ConfRoute
+  '/contact': typeof ContactRoute
+  '/news': typeof NewsRoute
+  '/opportunities': typeof OpportunitiesRoute
+  '/partners': typeof PartnersRoute
+  '/products': typeof ProductsRoute
+  '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
+  '/team': typeof TeamRoute
+  '/builders/open-source': typeof BuildersOpenSourceRoute
+  '/builders/projects': typeof BuildersProjectsRoute
+  '/communities/certified': typeof CommunitiesCertifiedRoute
+  '/builders/': typeof BuildersIndexRoute
+  '/communities/': typeof CommunitiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/conf': typeof ConfRoute
+  '/contact': typeof ContactRoute
+  '/news': typeof NewsRoute
+  '/opportunities': typeof OpportunitiesRoute
+  '/partners': typeof PartnersRoute
+  '/products': typeof ProductsRoute
+  '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
+  '/team': typeof TeamRoute
+  '/builders/open-source': typeof BuildersOpenSourceRoute
+  '/builders/projects': typeof BuildersProjectsRoute
+  '/communities/certified': typeof CommunitiesCertifiedRoute
+  '/builders': typeof BuildersIndexRoute
+  '/communities': typeof CommunitiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/conf': typeof ConfRoute
+  '/contact': typeof ContactRoute
+  '/news': typeof NewsRoute
+  '/opportunities': typeof OpportunitiesRoute
+  '/partners': typeof PartnersRoute
+  '/products': typeof ProductsRoute
+  '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
+  '/team': typeof TeamRoute
+  '/builders/open-source': typeof BuildersOpenSourceRoute
+  '/builders/projects': typeof BuildersProjectsRoute
+  '/communities/certified': typeof CommunitiesCertifiedRoute
+  '/builders/': typeof BuildersIndexRoute
+  '/communities/': typeof CommunitiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/conf'
+    | '/contact'
+    | '/news'
+    | '/opportunities'
+    | '/partners'
+    | '/products'
+    | '/programs'
+    | '/stories'
+    | '/team'
+    | '/builders/open-source'
+    | '/builders/projects'
+    | '/communities/certified'
+    | '/builders/'
+    | '/communities/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/conf'
+    | '/contact'
+    | '/news'
+    | '/opportunities'
+    | '/partners'
+    | '/products'
+    | '/programs'
+    | '/stories'
+    | '/team'
+    | '/builders/open-source'
+    | '/builders/projects'
+    | '/communities/certified'
+    | '/builders'
+    | '/communities'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/conf'
+    | '/contact'
+    | '/news'
+    | '/opportunities'
+    | '/partners'
+    | '/products'
+    | '/programs'
+    | '/stories'
+    | '/team'
+    | '/builders/open-source'
+    | '/builders/projects'
+    | '/communities/certified'
+    | '/builders/'
+    | '/communities/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConfRoute: typeof ConfRoute
+  ContactRoute: typeof ContactRoute
+  NewsRoute: typeof NewsRoute
+  OpportunitiesRoute: typeof OpportunitiesRoute
+  PartnersRoute: typeof PartnersRoute
+  ProductsRoute: typeof ProductsRoute
+  ProgramsRoute: typeof ProgramsRoute
+  StoriesRoute: typeof StoriesRoute
+  TeamRoute: typeof TeamRoute
+  BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
+  BuildersProjectsRoute: typeof BuildersProjectsRoute
+  CommunitiesCertifiedRoute: typeof CommunitiesCertifiedRoute
+  BuildersIndexRoute: typeof BuildersIndexRoute
+  CommunitiesIndexRoute: typeof CommunitiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +247,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conf': {
+      id: '/conf'
+      path: '/conf'
+      fullPath: '/conf'
+      preLoaderRoute: typeof ConfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities': {
+      id: '/opportunities'
+      path: '/opportunities'
+      fullPath: '/opportunities'
+      preLoaderRoute: typeof OpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stories': {
+      id: '/stories'
+      path: '/stories'
+      fullPath: '/stories'
+      preLoaderRoute: typeof StoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/builders/': {
+      id: '/builders/'
+      path: '/builders'
+      fullPath: '/builders/'
+      preLoaderRoute: typeof BuildersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/builders/open-source': {
+      id: '/builders/open-source'
+      path: '/builders/open-source'
+      fullPath: '/builders/open-source'
+      preLoaderRoute: typeof BuildersOpenSourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/builders/projects': {
+      id: '/builders/projects'
+      path: '/builders/projects'
+      fullPath: '/builders/projects'
+      preLoaderRoute: typeof BuildersProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/communities/': {
+      id: '/communities/'
+      path: '/communities'
+      fullPath: '/communities/'
+      preLoaderRoute: typeof CommunitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/communities/certified': {
+      id: '/communities/certified'
+      path: '/communities/certified'
+      fullPath: '/communities/certified'
+      preLoaderRoute: typeof CommunitiesCertifiedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConfRoute: ConfRoute,
+  ContactRoute: ContactRoute,
+  NewsRoute: NewsRoute,
+  OpportunitiesRoute: OpportunitiesRoute,
+  PartnersRoute: PartnersRoute,
+  ProductsRoute: ProductsRoute,
+  ProgramsRoute: ProgramsRoute,
+  StoriesRoute: StoriesRoute,
+  TeamRoute: TeamRoute,
+  BuildersOpenSourceRoute: BuildersOpenSourceRoute,
+  BuildersProjectsRoute: BuildersProjectsRoute,
+  CommunitiesCertifiedRoute: CommunitiesCertifiedRoute,
+  BuildersIndexRoute: BuildersIndexRoute,
+  CommunitiesIndexRoute: CommunitiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
