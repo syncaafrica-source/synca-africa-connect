@@ -83,7 +83,7 @@ export function CTALink({
 }) {
   return (
     <Link
-      to={to}
+      to={to as never}
       className={cn(
         "inline-flex items-center justify-center rounded-sm px-5 py-3 text-sm font-medium transition-all",
         variant === "primary" && "bg-primary text-primary-foreground hover:opacity-90",

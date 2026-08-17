@@ -29,7 +29,7 @@ export function Header() {
           {nav.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              to={item.to as never}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground font-medium" }}
             >
@@ -41,7 +41,6 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            search={{ topic: "join" }}
             className="hidden rounded-sm bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
           >
             Join Synca
@@ -62,7 +61,7 @@ export function Header() {
             {nav.map((item) => (
               <Link
                 key={item.to}
-                to={item.to}
+                to={item.to as never}
                 onClick={() => setOpen(false)}
                 className="border-b border-border py-3 text-sm last:border-0"
               >
@@ -71,7 +70,6 @@ export function Header() {
             ))}
             <Link
               to="/contact"
-              search={{ topic: "join" }}
               onClick={() => setOpen(false)}
               className="my-3 rounded-sm bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground"
             >
