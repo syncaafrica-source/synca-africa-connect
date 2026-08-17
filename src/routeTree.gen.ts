@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ConfRouteImport } from './routes/conf'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as ProductsRouteImport } from './routes/products'
@@ -29,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfRoute = ConfRouteImport.update({
+  id: '/conf',
+  path: '/conf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -80,6 +86,7 @@ const CommunitiesCertifiedRoute = CommunitiesCertifiedRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/opportunities': typeof OpportunitiesRoute
   '/products': typeof ProductsRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/opportunities': typeof OpportunitiesRoute
   '/products': typeof ProductsRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/opportunities': typeof OpportunitiesRoute
   '/products': typeof ProductsRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/conf'
     | '/contact'
     | '/opportunities'
     | '/products'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/conf'
     | '/contact'
     | '/opportunities'
     | '/products'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/conf'
     | '/contact'
     | '/opportunities'
     | '/products'
@@ -162,6 +174,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ConfRoute: typeof ConfRoute
   ContactRoute: typeof ContactRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   ProductsRoute: typeof ProductsRoute
@@ -187,6 +200,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conf': {
+      id: '/conf'
+      path: '/conf'
+      fullPath: '/conf'
+      preLoaderRoute: typeof ConfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -258,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ConfRoute: ConfRoute,
   ContactRoute: ContactRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   ProductsRoute: ProductsRoute,
