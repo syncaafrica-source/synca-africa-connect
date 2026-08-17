@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ConfRouteImport } from './routes/conf'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as BuildersIndexRouteImport } from './routes/builders/index'
@@ -45,6 +46,11 @@ const ContactRoute = ContactRouteImport.update({
 const OpportunitiesRoute = OpportunitiesRouteImport.update({
   id: '/opportunities',
   path: '/opportunities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsRoute = ProductsRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/opportunities': typeof OpportunitiesRoute
+  '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/opportunities': typeof OpportunitiesRoute
+  '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/opportunities': typeof OpportunitiesRoute
+  '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/conf'
     | '/contact'
     | '/opportunities'
+    | '/partners'
     | '/products'
     | '/programs'
     | '/builders/open-source'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/conf'
     | '/contact'
     | '/opportunities'
+    | '/partners'
     | '/products'
     | '/programs'
     | '/builders/open-source'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/conf'
     | '/contact'
     | '/opportunities'
+    | '/partners'
     | '/products'
     | '/programs'
     | '/builders/open-source'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   ConfRoute: typeof ConfRoute
   ContactRoute: typeof ContactRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
+  PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   ProgramsRoute: typeof ProgramsRoute
   BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/opportunities'
       fullPath: '/opportunities'
       preLoaderRoute: typeof OpportunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products': {
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfRoute: ConfRoute,
   ContactRoute: ContactRoute,
   OpportunitiesRoute: OpportunitiesRoute,
+  PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   ProgramsRoute: ProgramsRoute,
   BuildersOpenSourceRoute: BuildersOpenSourceRoute,
