@@ -48,7 +48,7 @@ const loop = [
   "ECONOMIC IMPACT",
 ];
 
-const gaps = [
+const gaps: [string, string][] = [
   ["Education ↔ Industry", "Les formations ne sont pas toujours connectées aux besoins réels des entreprises."],
   ["Talent ↔ Opportunity", "Des compétences existent, mais la visibilité, les réseaux et les accès manquent."],
   ["Community ↔ Industry", "Les communautés Tech créent de la valeur, souvent sous-connectée à l'économie."],
@@ -56,7 +56,7 @@ const gaps = [
   ["Technology ↔ Economy", "Une technologie n'a d'impact que lorsqu'elle rencontre un besoin réel."],
 ];
 
-const pillars = [
+const pillars: [string, string, string][] = [
   ["01", "Skills", "Développer des compétences adaptées aux besoins réels du marché."],
   ["02", "Talent", "Identifier, révéler et connecter les talents africains."],
   ["03", "Communities", "Renforcer les communautés qui font vivre l'écosystème Tech."],
@@ -65,7 +65,7 @@ const pillars = [
   ["06", "Opportunity", "Créer des connexions entre talents, entreprises, startups et institutions."],
 ];
 
-const audiences = [
+const audiences: [string, string, string, string][] = [
   ["Talent", "Learn. Build. Connect. Grow.", "Rejoindre Synca", "/contact"],
   ["Community", "Strengthen your community. Connect it to opportunity.", "Community Certified", "/communities/certified"],
   ["Company", "Find talent. Build partnerships. Solve problems.", "Collaborer avec Synca", "/partners"],
@@ -144,7 +144,7 @@ function Home() {
               <span className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</span>
               <p className="mt-4 font-display text-lg font-semibold tracking-tight">{step}</p>
               <p className="mt-2 text-xs text-muted-foreground">
-                → {loop[(i + 1) % loop.length].toLowerCase()}
+                → {(loop[(i + 1) % loop.length] ?? "").toLowerCase()}
               </p>
             </li>
           ))}
@@ -339,7 +339,7 @@ function Home() {
 }
 
 function ConnectionGraph() {
-  const nodes = [
+  const nodes: [number, number][] = [
     [50, 30],
     [160, 70],
     [90, 140],
@@ -351,7 +351,7 @@ function ConnectionGraph() {
     [330, 90],
     [340, 300],
   ];
-  const edges = [
+  const edges: [number, number][] = [
     [0, 1],
     [1, 2],
     [2, 4],
@@ -371,10 +371,10 @@ function ConnectionGraph() {
       {edges.map(([a, b], i) => (
         <line
           key={i}
-          x1={nodes[a][0]}
-          y1={nodes[a][1]}
-          x2={nodes[b][0]}
-          y2={nodes[b][1]}
+          x1={nodes[a]![0]}
+          y1={nodes[a]![1]}
+          x2={nodes[b]![0]}
+          y2={nodes[b]![1]}
           stroke="currentColor"
           strokeOpacity="0.25"
           strokeWidth="1"
