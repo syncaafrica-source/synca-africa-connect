@@ -17,6 +17,7 @@ import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as TeamRouteImport } from './routes/team'
 import { Route as BuildersIndexRouteImport } from './routes/builders/index'
 import { Route as BuildersOpenSourceRouteImport } from './routes/builders/open-source'
 import { Route as BuildersProjectsRouteImport } from './routes/builders/projects'
@@ -63,6 +64,11 @@ const ProgramsRoute = ProgramsRouteImport.update({
   path: '/programs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BuildersIndexRoute = BuildersIndexRouteImport.update({
   id: '/builders/',
   path: '/builders/',
@@ -98,6 +104,7 @@ export interface FileRoutesByFullPath {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
+  '/team': typeof TeamRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
@@ -113,6 +120,7 @@ export interface FileRoutesByTo {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
+  '/team': typeof TeamRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
@@ -129,6 +137,7 @@ export interface FileRoutesById {
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
+  '/team': typeof TeamRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
@@ -146,6 +155,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/programs'
+    | '/team'
     | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
@@ -161,6 +171,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/programs'
+    | '/team'
     | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
@@ -176,6 +187,7 @@ export interface FileRouteTypes {
     | '/partners'
     | '/products'
     | '/programs'
+    | '/team'
     | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
@@ -192,6 +204,7 @@ export interface RootRouteChildren {
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   ProgramsRoute: typeof ProgramsRoute
+  TeamRoute: typeof TeamRoute
   BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
   BuildersProjectsRoute: typeof BuildersProjectsRoute
   CommunitiesCertifiedRoute: typeof CommunitiesCertifiedRoute
@@ -257,6 +270,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/builders/': {
       id: '/builders/'
       path: '/builders'
@@ -304,6 +324,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   ProgramsRoute: ProgramsRoute,
+  TeamRoute: TeamRoute,
   BuildersOpenSourceRoute: BuildersOpenSourceRoute,
   BuildersProjectsRoute: BuildersProjectsRoute,
   CommunitiesCertifiedRoute: CommunitiesCertifiedRoute,
