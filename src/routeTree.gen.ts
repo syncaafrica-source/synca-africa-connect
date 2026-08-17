@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as BuildersIndexRouteImport } from './routes/builders/index'
 import { Route as BuildersOpenSourceRouteImport } from './routes/builders/open-source'
@@ -32,6 +33,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgramsRoute = ProgramsRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/products': typeof ProductsRoute
   '/programs': typeof ProgramsRoute
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/products'
     | '/programs'
     | '/builders/open-source'
     | '/builders/projects'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/products'
     | '/programs'
     | '/builders/open-source'
     | '/builders/projects'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/products'
     | '/programs'
     | '/builders/open-source'
     | '/builders/projects'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  ProductsRoute: typeof ProductsRoute
   ProgramsRoute: typeof ProgramsRoute
   BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
   BuildersProjectsRoute: typeof BuildersProjectsRoute
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programs': {
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  ProductsRoute: ProductsRoute,
   ProgramsRoute: ProgramsRoute,
   BuildersOpenSourceRoute: BuildersOpenSourceRoute,
   BuildersProjectsRoute: BuildersProjectsRoute,
