@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as BuildersIndexRouteImport } from './routes/builders/index'
+import { Route as BuildersProjectsRouteImport } from './routes/builders/projects'
 import { Route as CommunitiesIndexRouteImport } from './routes/communities/index'
 import { Route as CommunitiesCertifiedRouteImport } from './routes/communities/certified'
 
@@ -42,6 +43,11 @@ const BuildersIndexRoute = BuildersIndexRouteImport.update({
   path: '/builders/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BuildersProjectsRoute = BuildersProjectsRouteImport.update({
+  id: '/builders/projects',
+  path: '/builders/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CommunitiesIndexRoute = CommunitiesIndexRouteImport.update({
   id: '/communities/',
   path: '/communities/',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
+  '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
   '/builders/': typeof BuildersIndexRoute
   '/communities/': typeof CommunitiesIndexRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
+  '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
   '/builders': typeof BuildersIndexRoute
   '/communities': typeof CommunitiesIndexRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
+  '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
   '/builders/': typeof BuildersIndexRoute
   '/communities/': typeof CommunitiesIndexRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/programs'
+    | '/builders/projects'
     | '/communities/certified'
     | '/builders/'
     | '/communities/'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/programs'
+    | '/builders/projects'
     | '/communities/certified'
     | '/builders'
     | '/communities'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/programs'
+    | '/builders/projects'
     | '/communities/certified'
     | '/builders/'
     | '/communities/'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ProgramsRoute: typeof ProgramsRoute
+  BuildersProjectsRoute: typeof BuildersProjectsRoute
   CommunitiesCertifiedRoute: typeof CommunitiesCertifiedRoute
   BuildersIndexRoute: typeof BuildersIndexRoute
   CommunitiesIndexRoute: typeof CommunitiesIndexRoute
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BuildersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/builders/projects': {
+      id: '/builders/projects'
+      path: '/builders/projects'
+      fullPath: '/builders/projects'
+      preLoaderRoute: typeof BuildersProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/communities/': {
       id: '/communities/'
       path: '/communities'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ProgramsRoute: ProgramsRoute,
+  BuildersProjectsRoute: BuildersProjectsRoute,
   CommunitiesCertifiedRoute: CommunitiesCertifiedRoute,
   BuildersIndexRoute: BuildersIndexRoute,
   CommunitiesIndexRoute: CommunitiesIndexRoute,
