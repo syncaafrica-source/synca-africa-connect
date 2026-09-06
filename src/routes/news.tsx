@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section, Eyebrow, SectionTitle, Lead, CTALink, EmptyState } from "@/components/site/ui";
+import { TogoTechChart } from "@/components/site/TogoTechChart";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
