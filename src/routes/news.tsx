@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section, Eyebrow, SectionTitle, Lead, CTALink, EmptyState } from "@/components/site/ui";
+import { TogoTechChart } from "@/components/site/TogoTechChart";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -51,6 +52,19 @@ function News() {
       >
         <CTALink to="/contact">Contact presse</CTALink>
       </PageHero>
+
+      <Section>
+        <Eyebrow>Data · Écosystème</Eyebrow>
+        <SectionTitle className="text-3xl sm:text-4xl">
+          L'activité tech togolaise, 2020 → 2027.
+        </SectionTitle>
+        <Lead>
+          Une lecture chiffrée de la montée en puissance de l'écosystème de Lomé, à partir des
+          données publiées par les communautés elles-mêmes : PyCon Togo, African Product Keynote
+          (Friends of Figma Lomé), TDEV, TogoTech et la Synca Conf.
+        </Lead>
+        <TogoTechChart />
+      </Section>
 
       <Section>
         <div className="flex flex-wrap items-end justify-between gap-6">
