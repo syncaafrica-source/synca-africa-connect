@@ -112,6 +112,15 @@ const events: EventRow[] = [
     note: "Éditions oscillant entre 50 et 80 personnes (médiane retenue : 65)",
   },
   {
+    id: "apk25",
+    name: "Africa Product Keynote 2025",
+    short: "Africa Product Keynote 25",
+    year: 2025,
+    participants: 70,
+    organisateur: "Friends of Figma Lomé",
+    note: "Moins de 80 participants à l'édition 2025",
+  },
+  {
     id: "grit25",
     name: "Le GRIT 2025",
     short: "GRIT 25",
