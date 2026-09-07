@@ -370,7 +370,7 @@ export function TogoTechChart() {
       {/* ————— Chiffres clés ————— */}
       <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { k: "13", l: "éditions documentées (2023 → 2026)" },
+          { k: "14", l: "éditions documentées (2023 → 2026)" },
           { k: "80 – 150", l: "audience récurrente réellement mobilisable" },
           { k: "900", l: "record d'affluence : Togo IT Days 2026" },
           { k: "65", l: "plus petit format suivi : Les Pros de la Tech" },
@@ -394,8 +394,9 @@ export function TogoTechChart() {
           en gestion de projet numérique. Les universités, les écoles privées, les centres de
           formation et les bootcamps injectent en continu de nouveaux profils dans l'écosystème. Et
           pourtant, quand on additionne les rendez-vous tech à impact — DevFest, TDevFest, Togo IT
-          Days, PyCon Togo, Forum international sur la protection des données personnelles, Les Pros
-          de la Tech, Synca Conf, GRIT — la moyenne de participation par événement reste comprise
+          Days, PyCon Togo, Forum international sur la protection des données personnelles, Africa
+          Product Keynote, Les Pros de la Tech, Synca Conf, GRIT — la moyenne de participation par
+          événement reste comprise
           entre <span className="font-semibold text-foreground">80 et 150 personnes</span>. Un
           écosystème qui produit des milliers de nouveaux acteurs mobilise, dans la vraie vie, une
           salle.
@@ -413,7 +414,8 @@ export function TogoTechChart() {
           de présence. Ils mesurent une capacité d'attraction ponctuelle, pas l'engagement continu
           d'une communauté. Dès qu'on regarde les rendez-vous portés par les communautés
           elles-mêmes, l'ordre de grandeur retombe : 200 à 300 pour un DevFest ou un TDevFest, 100
-          à 300 pour PyCon Togo, 200 pour la première Synca Conf, 50 à 80 pour Les Pros de la Tech.
+          à 300 pour PyCon Togo, 200 pour la première Synca Conf, 50 à 80 pour Les Pros de la Tech,
+          moins de 80 pour l'Africa Product Keynote de Friends of Figma Lomé.
         </p>
 
         <h4 className="mt-10 font-display text-lg font-semibold">
@@ -472,10 +474,10 @@ export function TogoTechChart() {
             Périmètre : événements tech physiques à impact de l'écosystème togolais, 2023 → 2026.
             Les données proviennent des pages officielles des communautés, des communiqués et des
             rapports d'édition publiés en ligne. Quand une fourchette est annoncée (250–300 pour
-            TDevFest, 50–80 pour Les Pros de la Tech), la médiane est retenue et la fourchette
-            affichée dans l'infobulle. Le GRIT 2025 est affiché mais exclu des moyennes : son total
-            agrège plusieurs activités simultanées. Aucun chiffre n'est estimé en dehors de ces
-            règles ; toute donnée officielle complémentaire sera intégrée.
+            TDevFest, 50–80 pour Les Pros de la Tech, <80 pour Africa Product Keynote), la médiane
+            est retenue et la fourchette affichée dans l'infobulle. Le GRIT 2025 est affiché mais
+            exclu des moyennes : son total agrège plusieurs activités simultanées. Aucun chiffre n'est
+            estimé en dehors de ces règles ; toute donnée officielle complémentaire sera intégrée.
           </p>
         </div>
       </article>
@@ -493,6 +495,7 @@ export function TogoTechChart() {
           <li>Python Togo — rapport PyCon Togo 2025 et bilan de l'édition 2026</li>
           <li>Les Pros de la Tech — publications des éditions successives</li>
           <li>Le GRIT — bilan de l'édition 2025 (activités simultanées)</li>
+          <li>Friends of Figma Lomé — Africa Product Keynote 2025</li>
           <li>Synca — bilan de la Synca Conf 2026 (Lomé)</li>
         </ul>
       </div>

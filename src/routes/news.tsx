@@ -59,10 +59,10 @@ function News() {
           Les événements tech togolais, 2023 → 2026 : qui vient vraiment ?
         </SectionTitle>
         <Lead>
-          Treize éditions documentées — Togo IT Days, DevFest Lomé, TDevFest, PyCon Togo, Forum
-          international sur la protection des données personnelles, Les Pros de la Tech, GRIT et
-          Synca Conf — pour une seule question : pourquoi la participation moyenne de l'écosystème
-          reste-t-elle entre 80 et 150 personnes ?
+          Quatorze éditions documentées — Togo IT Days, DevFest Lomé, TDevFest, PyCon Togo, Forum
+          international sur la protection des données personnelles, Africa Product Keynote, Les Pros
+          de la Tech, GRIT et Synca Conf — pour une seule question : pourquoi la participation
+          moyenne de l'écosystème reste-t-elle entre 80 et 150 personnes ?
         </Lead>
         <TogoTechChart />
       </Section>
