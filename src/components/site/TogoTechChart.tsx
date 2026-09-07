@@ -474,8 +474,9 @@ export function TogoTechChart() {
             Périmètre : événements tech physiques à impact de l'écosystème togolais, 2023 → 2026.
             Les données proviennent des pages officielles des communautés, des communiqués et des
             rapports d'édition publiés en ligne. Quand une fourchette est annoncée (250–300 pour
-            TDevFest, 50–80 pour Les Pros de la Tech, <80 pour Africa Product Keynote), la médiane
-            est retenue et la fourchette affichée dans l'infobulle. Le GRIT 2025 est affiché mais
+            TDevFest, 50–80 pour Les Pros de la Tech, moins de 80 pour Africa Product Keynote), la
+            médiane est retenue et la fourchette affichée dans l'infobulle. Le GRIT 2025 est affiché
+            mais
             exclu des moyennes : son total agrège plusieurs activités simultanées. Aucun chiffre n'est
             estimé en dehors de ces règles ; toute donnée officielle complémentaire sera intégrée.
           </p>
