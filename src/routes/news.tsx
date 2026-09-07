@@ -56,15 +56,17 @@ function News() {
       <Section>
         <Eyebrow>Data · Écosystème</Eyebrow>
         <SectionTitle className="text-3xl sm:text-4xl">
-          L'activité tech togolaise, 2020 → 2027.
+          Les événements tech togolais, 2023 → 2026 : qui vient vraiment ?
         </SectionTitle>
         <Lead>
-          Une lecture chiffrée de la montée en puissance de l'écosystème de Lomé, à partir des
-          données publiées par les communautés elles-mêmes : PyCon Togo, African Product Keynote
-          (Friends of Figma Lomé), TDEV, TogoTech et la Synca Conf.
+          Treize éditions documentées — Togo IT Days, DevFest Lomé, TDevFest, PyCon Togo, Forum
+          international sur la protection des données personnelles, Les Pros de la Tech, GRIT et
+          Synca Conf — pour une seule question : pourquoi la participation moyenne de l'écosystème
+          reste-t-elle entre 80 et 150 personnes ?
         </Lead>
         <TogoTechChart />
       </Section>
+
 
       <Section>
         <div className="flex flex-wrap items-end justify-between gap-6">
