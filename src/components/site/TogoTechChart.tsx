@@ -502,9 +502,9 @@ export function TogoTechChart() {
       </div>
 
       <div className="mt-16 border border-primary/30 bg-primary/5 p-8 sm:p-10">
-        <p className="eyebrow text-primary">Call to discussion</p>
+        <p className="eyebrow text-primary">Appel à contribuer</p>
         <h3 className="mt-4 font-display text-2xl font-bold">
-          Vous voyons d'autres causes, d'autres données ou des solutions à tester ?
+          Vous voyez d'autres causes, d'autres données ou des solutions à tester ?
         </h3>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           Ce constat ne vaut que s'il est discuté, complété et transformé en action. Que vous soyez
