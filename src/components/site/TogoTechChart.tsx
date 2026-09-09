@@ -500,6 +500,24 @@ export function TogoTechChart() {
           <li>Synca — bilan de la Synca Conf 2026 (Lomé)</li>
         </ul>
       </div>
+
+      <div className="mt-16 border border-primary/30 bg-primary/5 p-8 sm:p-10">
+        <p className="eyebrow text-primary">Call to discussion</p>
+        <h3 className="mt-4 font-display text-2xl font-bold">
+          Vous voyons d'autres causes, d'autres données ou des solutions à tester ?
+        </h3>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          Ce constat ne vaut que s'il est discuté, complété et transformé en action. Que vous soyez
+          organisateur, communauté, entreprise, école ou institution, envoyez-nous votre regard,
+          vos chiffres ou vos idées. Synca veut construire ce diagnostic avec l'écosystème.
+        </p>
+        <a
+          href="mailto:contact@sync-africa.com?subject=Discussion%20%C3%A9cosyst%C3%A8me%20tech%20togolais"
+          className="mt-6 inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          Lancer la discussion — contact@sync-africa.com
+        </a>
+      </div>
     </div>
   );
 }
