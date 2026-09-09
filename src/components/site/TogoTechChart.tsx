@@ -371,7 +371,7 @@ export function TogoTechChart() {
       <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
         {[
           { k: "14", l: "éditions documentées (2023 → 2026)" },
-          { k: "80 – 150", l: "audience récurrente réellement mobilisable" },
+          { k: "272", l: "participants en moyenne par événement" },
           { k: "900", l: "record d'affluence : Togo IT Days 2026" },
           { k: "65", l: "plus petit format suivi : Les Pros de la Tech" },
         ].map((s) => (
