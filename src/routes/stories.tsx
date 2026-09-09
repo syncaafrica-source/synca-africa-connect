@@ -30,7 +30,7 @@ function Stories() {
         title={<>Challenge → Action → Result.</>}
         lead="Des parcours réels : talents, Builders, communautés, startups, partenaires et projets."
       >
-        <CTALink to="/contact">Partager votre histoire</CTALink>
+        <CTALink to="/contact">Partagez votre histoire</CTALink>
       </PageHero>
 
       <Section>
