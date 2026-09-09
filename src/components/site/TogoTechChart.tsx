@@ -402,6 +402,14 @@ export function TogoTechChart() {
           salle.
         </p>
 
+        <p className="mt-4 rounded-sm border border-primary/20 bg-primary/5 p-4 text-sm leading-relaxed text-foreground">
+          Sur les 13 éditions documentées et comparables, la participation moyenne est de
+          <span className="mx-1 font-display text-lg font-bold text-primary">272 personnes</span>
+          par événement. Ce chiffre est tiré vers le haut par les rendez-vous institutionnels ; les
+          formats portés par les communautés seuls se situent majoritairement entre 65 et 300
+          participants.
+        </p>
+
         <h4 className="mt-10 font-display text-lg font-semibold">
           1. Le sommet cache la base
         </h4>
