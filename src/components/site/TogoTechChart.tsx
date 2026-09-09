@@ -371,7 +371,7 @@ export function TogoTechChart() {
       <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
         {[
           { k: "14", l: "éditions documentées (2023 → 2026)" },
-          { k: "80 – 150", l: "audience récurrente réellement mobilisable" },
+          { k: "272", l: "participants en moyenne par événement" },
           { k: "900", l: "record d'affluence : Togo IT Days 2026" },
           { k: "65", l: "plus petit format suivi : Les Pros de la Tech" },
         ].map((s) => (
@@ -400,6 +400,14 @@ export function TogoTechChart() {
           entre <span className="font-semibold text-foreground">80 et 150 personnes</span>. Un
           écosystème qui produit des milliers de nouveaux acteurs mobilise, dans la vraie vie, une
           salle.
+        </p>
+
+        <p className="mt-4 rounded-sm border border-primary/20 bg-primary/5 p-4 text-sm leading-relaxed text-foreground">
+          Sur les 13 éditions documentées et comparables, la participation moyenne est de
+          <span className="mx-1 font-display text-lg font-bold text-primary">272 personnes</span>
+          par événement. Ce chiffre est tiré vers le haut par les rendez-vous institutionnels ; les
+          formats portés par les communautés seuls se situent majoritairement entre 65 et 300
+          participants.
         </p>
 
         <h4 className="mt-10 font-display text-lg font-semibold">
