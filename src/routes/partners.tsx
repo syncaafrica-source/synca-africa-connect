@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Eyebrow, SectionTitle, Lead, CTALink } from "@/components/site/ui";
+import datacampDonatesAsset from "@/assets/datacamp-donates.png.asset.json";
 
 export const Route = createFileRoute("/partners")({
   head: () => ({
