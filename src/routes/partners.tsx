@@ -54,6 +54,27 @@ function Partners() {
         </div>
       </Section>
 
+      <Section>
+        <Eyebrow>Ils nous font confiance</Eyebrow>
+        <SectionTitle>Nos partenaires.</SectionTitle>
+        <div className="mt-14 grid grid-cols-2 gap-px bg-border sm:grid-cols-3 lg:grid-cols-4">
+          <a
+            key="datacamp-donates"
+            href="https://www.datacamp.com/donates"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center bg-white p-8 transition-opacity hover:opacity-90"
+          >
+            <img
+              src={datacampDonatesAsset.url}
+              alt="DataCamp Donates"
+              className="h-12 w-auto object-contain"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </Section>
+
       <Section ink>
         <Eyebrow ink>Ce que nous construisons ensemble</Eyebrow>
         <SectionTitle>Talents, compétences, projets, marchés.</SectionTitle>
