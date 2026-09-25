@@ -12,6 +12,8 @@ export const Route = createFileRoute("/builders/projects")({
       },
       { property: "og:title", content: "Builders Projects — Synca" },
       { property: "og:description", content: "Built by the community. Open to the ecosystem." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/builders/projects" },
     ],
     links: [{ rel: "canonical", href: "/builders/projects" }],

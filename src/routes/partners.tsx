@@ -13,6 +13,8 @@ export const Route = createFileRoute("/partners")({
       },
       { property: "og:title", content: "Partners — Synca" },
       { property: "og:description", content: "Build the ecosystem with us." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/partners" },
     ],
     links: [{ rel: "canonical", href: "/partners" }],

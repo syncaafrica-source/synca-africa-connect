@@ -12,6 +12,8 @@ export const Route = createFileRoute("/communities/certified")({
       },
       { property: "og:title", content: "Synca Community Certified" },
       { property: "og:description", content: "Recognize. Strengthen. Connect." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/communities/certified" },
     ],
     links: [{ rel: "canonical", href: "/communities/certified" }],

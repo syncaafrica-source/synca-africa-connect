@@ -16,6 +16,7 @@ export const Route = createFileRoute("/conf")({
         content: "16–18 March 2027 · Education & Skills, AI, Cybersecurity, FinTech, Open Source.",
       },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/conf" },
     ],
     links: [{ rel: "canonical", href: "/conf" }],

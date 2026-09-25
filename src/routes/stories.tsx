@@ -12,6 +12,8 @@ export const Route = createFileRoute("/stories")({
       },
       { property: "og:title", content: "Success Stories — Synca" },
       { property: "og:description", content: "Challenge → Action → Result." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/stories" },
     ],
     links: [{ rel: "canonical", href: "/stories" }],

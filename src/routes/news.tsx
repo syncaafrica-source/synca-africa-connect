@@ -14,6 +14,8 @@ export const Route = createFileRoute("/news")({
       },
       { property: "og:title", content: "Newsroom — Synca" },
       { property: "og:description", content: "Insights and stories from Africa's digital economy." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/news" },
     ],
     links: [{ rel: "canonical", href: "/news" }],
