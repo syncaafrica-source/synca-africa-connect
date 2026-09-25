@@ -12,6 +12,8 @@ export const Route = createFileRoute("/builders/open-source")({
       },
       { property: "og:title", content: "Synca Open Source" },
       { property: "og:description", content: "Build once. Share with everyone." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/builders/open-source" },
     ],
     links: [{ rel: "canonical", href: "/builders/open-source" }],

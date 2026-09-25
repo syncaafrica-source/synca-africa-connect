@@ -17,6 +17,8 @@ export const Route = createFileRoute("/")({
         content:
           "The digital gateway of a pan-African ecosystem connecting talent, communities, builders and opportunity.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

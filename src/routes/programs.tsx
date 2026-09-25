@@ -15,6 +15,8 @@ export const Route = createFileRoute("/programs")({
         property: "og:description",
         content: "Six programs to grow skills, talent, communities and projects across Africa.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/programs" },
     ],
     links: [{ rel: "canonical", href: "/programs" }],

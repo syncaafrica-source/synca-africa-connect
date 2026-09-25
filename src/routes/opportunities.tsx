@@ -13,6 +13,8 @@ export const Route = createFileRoute("/opportunities")({
       },
       { property: "og:title", content: "Opportunities — Synca" },
       { property: "og:description", content: "Connect talent to real opportunity across Africa." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/opportunities" },
     ],
     links: [{ rel: "canonical", href: "/opportunities" }],

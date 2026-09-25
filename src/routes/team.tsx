@@ -12,6 +12,8 @@ export const Route = createFileRoute("/team")({
       },
       { property: "og:title", content: "Team — Synca" },
       { property: "og:description", content: "The people synchronizing Africa's digital economy." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/team" },
     ],
     links: [{ rel: "canonical", href: "/team" }],

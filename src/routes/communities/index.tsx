@@ -24,6 +24,8 @@ export const Route = createFileRoute("/communities/")({
         property: "og:description",
         content: "Communities are the invisible infrastructure of the African tech ecosystem.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/communities" },
     ],
     links: [{ rel: "canonical", href: "/communities" }],

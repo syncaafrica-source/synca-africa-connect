@@ -1,0 +1,3 @@
+- [x] Reposition the DataCamp Donates logo on the partners page and add it to the footer.
+- [x] Verify the logo displays correctly on desktop and mobile.
+- [x] Clarify GitHub synchronization status without changing repository state manually: GitHub is not connected yet; project changes are ready for Lovable Git sync when connected.

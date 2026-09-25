@@ -15,6 +15,8 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Vision, mission, values and manifesto of Synca — Synchronize Africa.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
