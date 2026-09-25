@@ -57,18 +57,18 @@ function Partners() {
       <Section>
         <Eyebrow>Ils nous font confiance</Eyebrow>
         <SectionTitle>Nos partenaires.</SectionTitle>
-        <div className="mt-14 grid grid-cols-2 gap-px bg-border sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-12 flex justify-center border-y border-border py-10 sm:py-12">
           <a
-            key="datacamp-donates"
             href="https://www.datacamp.com/donates"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center bg-white p-8 transition-opacity hover:opacity-90"
+            aria-label="DataCamp Donates — visiter le site"
+            className="inline-flex min-h-20 items-center justify-center bg-card px-5 py-4 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             <img
               src={datacampDonatesAsset.url}
               alt="DataCamp Donates"
-              className="h-12 w-auto object-contain"
+              className="h-auto w-56 max-w-full object-contain sm:w-64"
               loading="lazy"
             />
           </a>

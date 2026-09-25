@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import datacampDonatesAsset from "@/assets/datacamp-donates.png.asset.json";
 
 const groups: { title: string; links: { label: string; to: string }[] }[] = [
   {
@@ -101,7 +102,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-ink-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-ink-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="font-mono text-xs uppercase text-ink-muted">Partenaire</span>
+            <a
+              href="https://www.datacamp.com/donates"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="DataCamp Donates — visiter le site"
+              className="inline-flex min-h-14 items-center justify-center bg-card px-4 py-2 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              <img
+                src={datacampDonatesAsset.url}
+                alt="DataCamp Donates"
+                className="h-auto w-36 object-contain"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="mt-8 flex flex-col gap-4 border-t border-ink-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-muted">© Synca — Synchronize Africa</p>
           <div className="flex flex-wrap gap-5">
             {socials.map((s) => (

@@ -1,0 +1,3 @@
+- [ ] Reposition the DataCamp Donates logo on the partners page and add it to the footer.
+- [ ] Verify the logo displays correctly on desktop and mobile.
+- [ ] Clarify GitHub synchronization status without changing repository state manually.
