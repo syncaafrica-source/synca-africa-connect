@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Eyebrow, SectionTitle, Lead, CTALink } from "@/components/site/ui";
+import datacampDonatesAsset from "@/assets/datacamp-donates.png.asset.json";
 
 export const Route = createFileRoute("/partners")({
   head: () => ({
@@ -50,6 +51,27 @@ function Partners() {
               <p className="mt-3 text-sm text-muted-foreground">{d}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section>
+        <Eyebrow>Ils nous font confiance</Eyebrow>
+        <SectionTitle>Nos partenaires.</SectionTitle>
+        <div className="mt-14 grid grid-cols-2 gap-px bg-border sm:grid-cols-3 lg:grid-cols-4">
+          <a
+            key="datacamp-donates"
+            href="https://www.datacamp.com/donates"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center bg-white p-8 transition-opacity hover:opacity-90"
+          >
+            <img
+              src={datacampDonatesAsset.url}
+              alt="DataCamp Donates"
+              className="h-12 w-auto object-contain"
+              loading="lazy"
+            />
+          </a>
         </div>
       </Section>
 
