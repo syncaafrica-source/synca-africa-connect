@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ConfRouteImport } from './routes/conf'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FormationRouteImport } from './routes/formation'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PartnersRouteImport } from './routes/partners'
@@ -44,6 +45,11 @@ const ConfRoute = ConfRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationRoute = FormationRouteImport.update({
+  id: '/formation',
+  path: '/formation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsRoute = NewsRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
+  '/formation': typeof FormationRoute
   '/news': typeof NewsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/partners': typeof PartnersRoute
@@ -130,6 +137,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
+  '/formation': typeof FormationRoute
   '/news': typeof NewsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/partners': typeof PartnersRoute
@@ -149,6 +157,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
+  '/formation': typeof FormationRoute
   '/news': typeof NewsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/partners': typeof PartnersRoute
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/conf'
     | '/contact'
+    | '/formation'
     | '/news'
     | '/opportunities'
     | '/partners'
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/conf'
     | '/contact'
+    | '/formation'
     | '/news'
     | '/opportunities'
     | '/partners'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/conf'
     | '/contact'
+    | '/formation'
     | '/news'
     | '/opportunities'
     | '/partners'
@@ -224,6 +236,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ConfRoute: typeof ConfRoute
   ContactRoute: typeof ContactRoute
+  FormationRoute: typeof FormationRoute
   NewsRoute: typeof NewsRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PartnersRoute: typeof PartnersRoute
@@ -266,6 +279,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formation': {
+      id: '/formation'
+      path: '/formation'
+      fullPath: '/formation'
+      preLoaderRoute: typeof FormationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news': {
@@ -360,6 +380,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ConfRoute: ConfRoute,
   ContactRoute: ContactRoute,
+  FormationRoute: FormationRoute,
   NewsRoute: NewsRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PartnersRoute: PartnersRoute,
