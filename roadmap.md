@@ -1,3 +1,8 @@
 - [x] Reposition the DataCamp Donates logo on the partners page and add it to the footer.
 - [x] Verify the logo displays correctly on desktop and mobile.
 - [x] Clarify GitHub synchronization status without changing repository state manually: GitHub is not connected yet; project changes are ready for Lovable Git sync when connected.
+- [ ] Build the official /conf/lome-2027 page and link it from the site.
+- [ ] Embed and verify both existing Tally forms.
+- [ ] Add secure editable event content and verify administration.
+- [ ] Verify desktop/mobile layout, official details, and save changes.
+- [ ] Replace interim imagery with the official poster when supplied (waiting for user).

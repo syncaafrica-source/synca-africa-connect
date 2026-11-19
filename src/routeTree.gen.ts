@@ -26,6 +26,7 @@ import { Route as BuildersOpenSourceRouteImport } from './routes/builders/open-s
 import { Route as BuildersProjectsRouteImport } from './routes/builders/projects'
 import { Route as CommunitiesIndexRouteImport } from './routes/communities/index'
 import { Route as CommunitiesCertifiedRouteImport } from './routes/communities/certified'
+import { Route as ConfLome2027RouteImport } from './routes/conf_.lome-2027'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -112,6 +113,11 @@ const CommunitiesCertifiedRoute = CommunitiesCertifiedRouteImport.update({
   path: '/communities/certified',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConfLome2027Route = ConfLome2027RouteImport.update({
+  id: '/conf_/lome-2027',
+  path: '/conf/lome-2027',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -129,6 +135,7 @@ export interface FileRoutesByFullPath {
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
+  '/conf/lome-2027': typeof ConfLome2027Route
   '/builders/': typeof BuildersIndexRoute
   '/communities/': typeof CommunitiesIndexRoute
 }
@@ -148,6 +155,7 @@ export interface FileRoutesByTo {
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
+  '/conf/lome-2027': typeof ConfLome2027Route
   '/builders': typeof BuildersIndexRoute
   '/communities': typeof CommunitiesIndexRoute
 }
@@ -168,6 +176,7 @@ export interface FileRoutesById {
   '/builders/open-source': typeof BuildersOpenSourceRoute
   '/builders/projects': typeof BuildersProjectsRoute
   '/communities/certified': typeof CommunitiesCertifiedRoute
+  '/conf_/lome-2027': typeof ConfLome2027Route
   '/builders/': typeof BuildersIndexRoute
   '/communities/': typeof CommunitiesIndexRoute
 }
@@ -189,6 +198,7 @@ export interface FileRouteTypes {
     | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
+    | '/conf/lome-2027'
     | '/builders/'
     | '/communities/'
   fileRoutesByTo: FileRoutesByTo
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
+    | '/conf/lome-2027'
     | '/builders'
     | '/communities'
   id:
@@ -227,6 +238,7 @@ export interface FileRouteTypes {
     | '/builders/open-source'
     | '/builders/projects'
     | '/communities/certified'
+    | '/conf_/lome-2027'
     | '/builders/'
     | '/communities/'
   fileRoutesById: FileRoutesById
@@ -247,6 +259,7 @@ export interface RootRouteChildren {
   BuildersOpenSourceRoute: typeof BuildersOpenSourceRoute
   BuildersProjectsRoute: typeof BuildersProjectsRoute
   CommunitiesCertifiedRoute: typeof CommunitiesCertifiedRoute
+  ConfLome2027Route: typeof ConfLome2027Route
   BuildersIndexRoute: typeof BuildersIndexRoute
   CommunitiesIndexRoute: typeof CommunitiesIndexRoute
 }
@@ -372,6 +385,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunitiesCertifiedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conf_/lome-2027': {
+      id: '/conf_/lome-2027'
+      path: '/conf/lome-2027'
+      fullPath: '/conf/lome-2027'
+      preLoaderRoute: typeof ConfLome2027RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -391,6 +411,7 @@ const rootRouteChildren: RootRouteChildren = {
   BuildersOpenSourceRoute: BuildersOpenSourceRoute,
   BuildersProjectsRoute: BuildersProjectsRoute,
   CommunitiesCertifiedRoute: CommunitiesCertifiedRoute,
+  ConfLome2027Route: ConfLome2027Route,
   BuildersIndexRoute: BuildersIndexRoute,
   CommunitiesIndexRoute: CommunitiesIndexRoute,
 }
