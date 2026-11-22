@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the Lomé event as an unnested `/conf/lome-2027` leaf so it does not inherit the other edition's page layout.
+- Use the public `/auth` page for sign-in and inline editing; fetch editor data only after sign-in through authenticated server functions with server-validated admin roles, so public SSR never calls protected loaders.
+- Validate all editable event content with the shared schema and persist it in the event content table; never derive edit privileges from browser state.

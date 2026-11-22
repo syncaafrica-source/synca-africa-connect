@@ -11,9 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ConfRouteImport } from './routes/conf'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FormationRouteImport } from './routes/formation'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as OpportunitiesRouteImport } from './routes/opportunities'
 import { Route as PartnersRouteImport } from './routes/partners'
@@ -38,6 +40,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConfRoute = ConfRouteImport.update({
   id: '/conf',
   path: '/conf',
@@ -51,6 +58,11 @@ const ContactRoute = ContactRouteImport.update({
 const FormationRoute = FormationRouteImport.update({
   id: '/formation',
   path: '/formation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsRoute = NewsRouteImport.update({
@@ -122,9 +134,11 @@ const ConfLome2027Route = ConfLome2027RouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/formation': typeof FormationRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/news': typeof NewsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/partners': typeof PartnersRoute
@@ -142,9 +156,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/formation': typeof FormationRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/news': typeof NewsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/partners': typeof PartnersRoute
@@ -163,9 +179,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/auth': typeof AuthRoute
   '/conf': typeof ConfRoute
   '/contact': typeof ContactRoute
   '/formation': typeof FormationRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/news': typeof NewsRoute
   '/opportunities': typeof OpportunitiesRoute
   '/partners': typeof PartnersRoute
@@ -185,9 +203,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/auth'
     | '/conf'
     | '/contact'
     | '/formation'
+    | '/mentions-legales'
     | '/news'
     | '/opportunities'
     | '/partners'
@@ -205,9 +225,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/auth'
     | '/conf'
     | '/contact'
     | '/formation'
+    | '/mentions-legales'
     | '/news'
     | '/opportunities'
     | '/partners'
@@ -225,9 +247,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/auth'
     | '/conf'
     | '/contact'
     | '/formation'
+    | '/mentions-legales'
     | '/news'
     | '/opportunities'
     | '/partners'
@@ -246,9 +270,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AuthRoute: typeof AuthRoute
   ConfRoute: typeof ConfRoute
   ContactRoute: typeof ContactRoute
   FormationRoute: typeof FormationRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   NewsRoute: typeof NewsRoute
   OpportunitiesRoute: typeof OpportunitiesRoute
   PartnersRoute: typeof PartnersRoute
@@ -280,6 +306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/conf': {
       id: '/conf'
       path: '/conf'
@@ -299,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/formation'
       fullPath: '/formation'
       preLoaderRoute: typeof FormationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news': {
@@ -398,9 +438,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AuthRoute: AuthRoute,
   ConfRoute: ConfRoute,
   ContactRoute: ContactRoute,
   FormationRoute: FormationRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   NewsRoute: NewsRoute,
   OpportunitiesRoute: OpportunitiesRoute,
   PartnersRoute: PartnersRoute,

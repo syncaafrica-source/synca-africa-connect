@@ -7,7 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { supabase } from '@/integrations/supabase/client';
+import { ConferenceAuthContext } from '@/components/conference/AuthContext';
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
@@ -124,9 +126,23 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  const [auth, setAuth] = useState({ signedIn: false, ready: false });
+  useEffect(() => {
+    let active = true;
+    void supabase.auth.getUser().then(({ data }) => { if (active) setAuth({ signedIn: Boolean(data.user), ready: true }); });
+    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event !== 'SIGNED_IN' && event !== 'SIGNED_OUT' && event !== 'USER_UPDATED') return;
+      setAuth({ signedIn: Boolean(session?.user), ready: true });
+      void router.invalidate();
+      if (event !== 'SIGNED_OUT') void queryClient.invalidateQueries();
+    });
+    return () => { active = false; listener.subscription.unsubscribe(); };
+  }, [queryClient, router]);
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ConferenceAuthContext.Provider value={auth}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <div className="flex min-h-screen flex-col">
         <Header />
@@ -135,6 +151,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      </ConferenceAuthContext.Provider>
     </QueryClientProvider>
   );
 }

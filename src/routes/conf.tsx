@@ -84,6 +84,13 @@ function Conf() {
       </PageHero>
 
       <Section>
+        <Eyebrow>Édition Lomé</Eyebrow>
+        <SectionTitle>Synca Conf 2027 — Lomé, Togo</SectionTitle>
+        <Lead>Made in Africa, Powered by Tech. Les 14 et 15 mai 2027, avec un side event le 13 mai.</Lead>
+        <div className="mt-8"><CTALink to="/conf/lome-2027">Découvrir l’édition Lomé 2027</CTALink></div>
+      </Section>
+
+      <Section>
         <Eyebrow>Axes</Eyebrow>
         <SectionTitle>Huit axes de travail.</SectionTitle>
         <div className="mt-12 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">

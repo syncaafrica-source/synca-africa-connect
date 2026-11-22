@@ -10,7 +10,7 @@ const nav = [
   { label: "Builders", to: "/builders" },
   { label: "Products", to: "/products" },
   { label: "Opportunities", to: "/opportunities" },
-  { label: "Synca Conf", to: "/conf" },
+  { label: "Synca Conf", to: "/conf/lome-2027" },
 ] as const;
 
 export function Header() {

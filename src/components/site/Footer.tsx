@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import datacampDonatesAsset from "@/assets/datacamp-donates.png.asset.json";
+import { useConferenceAuth } from '@/components/conference/AuthContext';
 
 const groups: { title: string; links: { label: string; to: string }[] }[] = [
   {
@@ -19,6 +20,7 @@ const groups: { title: string; links: { label: string; to: string }[] }[] = [
     title: "Events",
     links: [
       { label: "Synca Conf", to: "/conf" },
+      { label: "Lomé 2027", to: "/conf/lome-2027" },
       { label: "Hackathons", to: "/opportunities" },
       { label: "Workshops", to: "/programs" },
     ],
@@ -46,6 +48,7 @@ const groups: { title: string; links: { label: string; to: string }[] }[] = [
 const socials = ["LinkedIn", "X", "Instagram", "YouTube", "GitHub"];
 
 export function Footer() {
+  const { signedIn } = useConferenceAuth();
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
 
@@ -124,6 +127,7 @@ export function Footer() {
         </div>
         <div className="mt-8 flex flex-col gap-4 border-t border-ink-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-muted">© Synca — Synchronize Africa</p>
+          <Link to="/auth" className="text-xs text-ink-muted underline">{signedIn ? 'Mon espace' : 'Administration'}</Link>
           <div className="flex flex-wrap gap-5">
             {socials.map((s) => (
               <span key={s} className="text-xs text-ink-muted">
