@@ -204,13 +204,15 @@
 .conf-dark .conf-label { color: var(--ink-muted); }
 .conf-activity { padding: 28px; border: 1px solid var(--ink-border); border-radius: var(--radius); }
 .conf-action { min-height: 48px; height: auto; white-space: normal; text-align: center; }
-.conf-hero .conf-action[data-variant="outline"], .conf-dark .conf-action[data-variant="outline"] { background: transparent; color: var(--ink-foreground); border-color: var(--ink-muted); }
+.conf-hero .conf-action-outline, .conf-dark .conf-action-outline { background: transparent; color: var(--ink-foreground); border-color: var(--ink-muted); }
 .conf-event-end { padding: 48px 32px; border-bottom: 1px solid var(--border); }
 .tally-frame { display: block; border: 0; max-width: 100%; }
 .google-sign-in { --google-background: #FFFFFF; --google-border: #747775; --google-text: #1F1F1F; background: var(--google-background); border-color: var(--google-border); color: var(--google-text); gap: 10px; padding-inline: 12px; }
 .google-sign-in svg { width: 18px; height: 18px; }
 @media (max-width: 639px) {
   .conf-hero-content { padding: 24px 20px 32px; }
+  .conf-hero-content > .mt-12 { margin-top: 24px; }
+  .conf-hero-content > .mt-10 { margin-top: 24px; }
   .conf-event-title { font-size: 58px; }
   .conf-year-mark { margin-left: 16px; }
   .conf-band { padding: 56px 20px; }
