@@ -70,9 +70,8 @@ function EditorForm({ initial }: { initial: ConferenceContent }) {
     setSaving(true); setMessage('');
     try {
       await save({ data: parsed.data });
-      await queryClient.invalidateQueries({ queryKey: ['conference', 'lome-2027'] });
       await queryClient.invalidateQueries({ queryKey: ['conference-admin'] });
-      setMessage('Modifications enregistrées et visibles sur la page.');
+      setMessage('Modifications enregistrées dans l’administration. La page publique statique reste inchangée.');
     } catch { setMessage('Enregistrement impossible. Vos modifications sont conservées ici ; réessayez.'); }
     finally { setSaving(false); }
   }

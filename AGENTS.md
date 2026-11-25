@@ -12,3 +12,4 @@
 - Keep the Lomé event as an unnested `/conf/lome-2027` leaf so it does not inherit the other edition's page layout.
 - Use the public `/auth` page for sign-in and inline editing; fetch editor data only after sign-in through authenticated server functions with server-validated admin roles, so public SSR never calls protected loaders.
 - Validate all editable event content with the shared schema and persist it in the event content table; never derive edit privileges from browser state.
+- Render the public Lomé conference from bundled confirmed content without a loader and prerender only its explicit path; this keeps the event available without backend access and excludes authenticated pages from static output. The editor remains separate and does not update this static page automatically.

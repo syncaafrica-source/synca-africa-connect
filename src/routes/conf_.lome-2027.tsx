@@ -1,16 +1,11 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
 import { ArrowUpRight, ArrowDown, MapPin, CalendarDays, Mic2, Code2, ShieldCheck, Cpu, BriefcaseBusiness, Mail, Sparkles, Presentation, Network } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { TallyEmbed } from '@/components/conference/TallyEmbed';
-import { getConferenceContent } from '@/lib/conference/content.functions';
-import { event, partnerCategories } from '@/lib/conference/content';
+import { defaultContent, event, partnerCategories } from '@/lib/conference/content';
 import monument from '@/assets/lome-monument.webp.asset.json';
-const contentQuery = queryOptions({ queryKey: ['conference', 'lome-2027'], queryFn: () => getConferenceContent(), staleTime: 30_000 });
 export const Route = createFileRoute('/conf_/lome-2027')({
-  loader: ({ context }) => context.queryClient.ensureQueryData(contentQuery),
   head: () => ({ meta: [
     { title: 'Synca Conf 2027 – Lomé, 14–15 mai | Made in Africa, Powered by Tech' },
     { name: 'description', content: 'Le rendez-vous Tech panafricain à Lomé les 14 et 15 mai 2027. Innovation, IA, logiciel, produits, cybersécurité et JobTech. Side event le 13 mai.' },
@@ -36,7 +31,7 @@ const activities = [
   [Network, 'Networking', 'Faire naître les rencontres, les collaborations et les prochaines opportunités.'],
 ] as const;
 function LomeConference() {
-  const { data: content } = useSuspenseQuery(contentQuery);
+  const content = defaultContent;
   const participation = content.registrationUrl || 'mailto:contact@sync-africa.com?subject=Participation%20Synca%20Conf%202027%20Lom%C3%A9';
   return <div className="conference-page">
     <section className="conf-hero">
@@ -93,7 +88,7 @@ function LomeConference() {
       <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{[[CalendarDays,'Conférence','14 et 15 mai 2027'],[Sparkles,'Side event','13 mai 2027'],[MapPin,'Lieu',content.venue || 'Lomé, Togo · lieu précis à confirmer'],[Mail,'Organisation','Synca · contact@sync-africa.com']].map(([Icon,title,value]) => { const I=Icon as typeof MapPin; return <div key={String(title)}><I className="text-primary" size={24} /><h3 className="mt-5 font-semibold">{String(title)}</h3><p className="mt-2 break-words text-sm text-ink-muted">{String(value)}</p></div>; })}</div>
       <div className="mt-10 flex flex-wrap gap-5"><Action href={participation}>Participer à l’événement</Action><a href="mailto:contact@sync-africa.com" className="inline-flex items-center text-sm underline">Écrire à l’organisation</a></div>{content.socials.length > 0 && <div className="mt-8 flex flex-wrap gap-5">{content.socials.map(s=><a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary">{s.name} ↗</a>)}</div>}
     </Band>
-    <Band id="faq" number="11" label="Questions fréquentes" title="Avant de nous retrouver."><Accordion type="single" collapsible className="mt-10 max-w-4xl">{content.faq.map((f,i) => <AccordionItem key={i} value={String(i)}><AccordionTrigger className="py-6 text-base">{f.question}</AccordionTrigger><AccordionContent className="leading-relaxed text-muted-foreground">{f.answer}</AccordionContent></AccordionItem>)}</Accordion></Band>
+    <Band id="faq" number="11" label="Questions fréquentes" title="Avant de nous retrouver."><div className="mt-10 max-w-4xl">{content.faq.map(f => <details key={f.question} className="border-b border-border"><summary className="cursor-pointer py-6 text-base font-medium focus-visible:outline-2 focus-visible:outline-ring">{f.question}</summary><p className="pb-6 leading-relaxed text-muted-foreground">{f.answer}</p></details>)}</div></Band>
     <div className="conf-event-end"><div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-6"><div><p className="font-display text-2xl font-bold">SYNCA <span className="text-primary">/ CONF 2027</span></p><p className="mt-2 max-w-lg text-sm text-muted-foreground">Synchronize Africa — pour une technologie accessible, inclusive et attractive.</p></div><div className="space-y-2 text-sm"><a href="mailto:contact@sync-africa.com" className="block">contact@sync-africa.com</a><Link to="/mentions-legales" className="block underline">Mentions légales</Link><p className="text-muted-foreground">© Synca 2027 · Build. Connect. Grow.</p></div></div><p className="mx-auto mt-8 max-w-7xl text-xs text-muted-foreground">Photo de Lomé : Frappipi 01, <a href="https://commons.wikimedia.org/wiki/File:Togo_independance_01.jpg" target="_blank" rel="noopener noreferrer" className="underline">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline">CC BY-SA 4.0</a> · image redimensionnée.</p></div>
   </div>;
 }

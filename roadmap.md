@@ -2,6 +2,7 @@
 - [x] Verify the logo displays correctly on desktop and mobile.
 - [x] Clarify GitHub synchronization status without changing repository state manually: GitHub is not connected yet; project changes are ready for Lovable Git sync when connected.
 - [x] Build the official /conf/lome-2027 page and link it from the site.
+- [x] Make the public Lomé conference static without live content reads; retain both Tally embeds and native FAQ disclosure.
 - [x] Embed and verify both existing Tally forms (rendering and fields; no test submissions sent).
 - [x] Add secure editable event content and social sign-in.
 - [x] Verify desktop/mobile layout, official details, and save changes.
