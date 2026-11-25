@@ -36,7 +36,7 @@ export function ContentEditor() {
   }
   return <>
     <div className="mb-10 flex flex-wrap justify-between gap-4 border-b border-border pb-6">
-      <Button asChild variant="outline"><Link to="/conf/lome-2027">Voir la page <ArrowUpRight /></Link></Button>
+      <Button asChild variant="outline"><Link to="/conf">Synca Conf <ArrowUpRight /></Link></Button>
       <Button variant="ghost" onClick={() => void signOut()}><LogOut /> Se déconnecter</Button>
     </div>
     {isPending && <p role="status">Chargement des contenus…</p>}
@@ -71,7 +71,7 @@ function EditorForm({ initial }: { initial: ConferenceContent }) {
     try {
       await save({ data: parsed.data });
       await queryClient.invalidateQueries({ queryKey: ['conference-admin'] });
-      setMessage('Modifications enregistrées dans l’administration. La page publique statique reste inchangée.');
+      setMessage('Modifications enregistrées dans l’administration. La page publique Lomé a été supprimée.');
     } catch { setMessage('Enregistrement impossible. Vos modifications sont conservées ici ; réessayez.'); }
     finally { setSaving(false); }
   }

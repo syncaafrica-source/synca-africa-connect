@@ -4,7 +4,6 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -129,9 +128,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
   const [auth, setAuth] = useState({ signedIn: false, ready: false });
-  const isStaticConference = useRouterState({ select: state => state.location.pathname === '/conf/lome-2027' });
   useEffect(() => {
-    if (isStaticConference) return;
     let active = true;
     void supabase.auth.getUser().then(({ data }) => { if (active) setAuth({ signedIn: Boolean(data.user), ready: true }); });
     const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
@@ -141,7 +138,7 @@ function RootComponent() {
       if (event !== 'SIGNED_OUT') void queryClient.invalidateQueries();
     });
     return () => { active = false; listener.subscription.unsubscribe(); };
-  }, [queryClient, router, isStaticConference]);
+  }, [queryClient, router]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -152,7 +149,7 @@ function RootComponent() {
         <main className="flex-1">
           <Outlet />
         </main>
-        {!isStaticConference && <Footer />}
+        <Footer />
       </div>
       </ConferenceAuthContext.Provider>
     </QueryClientProvider>

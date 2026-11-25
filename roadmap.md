@@ -1,13 +1,9 @@
 - [x] Reposition the DataCamp Donates logo on the partners page and add it to the footer.
 - [x] Verify the logo displays correctly on desktop and mobile.
 - [x] Clarify GitHub synchronization status without changing repository state manually: GitHub is not connected yet; project changes are ready for Lovable Git sync when connected.
-- [x] Build the official /conf/lome-2027 page and link it from the site.
-- [x] Make the public Lomé conference static without live content reads; retain both Tally embeds and native FAQ disclosure.
-- [x] Embed and verify both existing Tally forms (rendering and fields; no test submissions sent).
+- [x] Remove the public Lomé page and its navigation links; redirect old bookmarks to the main conference.
 - [x] Add secure editable event content and social sign-in.
 - [x] Verify desktop/mobile layout, official details, and save changes.
 - [ ] Assign the authorized administrator account (waiting for user email and first sign-in).
 - [ ] Verify administration with an authorized session (temporary test account declined).
-- [ ] Replace participation email with the official registration link (waiting for user link).
-- [ ] Replace interim imagery with the official poster when supplied (waiting for user).
 - [ ] Push to GitHub (waiting for the user to connect Git sync in Project settings → Git; the agent cannot connect it).

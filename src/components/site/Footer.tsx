@@ -20,7 +20,6 @@ const groups: { title: string; links: { label: string; to: string }[] }[] = [
     title: "Events",
     links: [
       { label: "Synca Conf", to: "/conf" },
-      { label: "Lomé 2027", to: "/conf/lome-2027" },
       { label: "Hackathons", to: "/opportunities" },
       { label: "Workshops", to: "/programs" },
     ],
