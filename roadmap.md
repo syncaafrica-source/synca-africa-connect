@@ -2,6 +2,8 @@
 - [x] Verify the logo displays correctly on desktop and mobile.
 - [x] Clarify GitHub synchronization status without changing repository state manually: GitHub is not connected yet; project changes are ready for Lovable Git sync when connected.
 - [x] Remove the public Lomé page and its navigation links; redirect old bookmarks to the main conference.
+- [x] Present the Lomé event statically on `/conf` and update the home-page event announcement without backend changes.
+- [x] Verify all conference information, Tally forms and mobile layout in the browser.
 - [x] Add secure editable event content and social sign-in.
 - [x] Verify desktop/mobile layout, official details, and save changes.
 - [ ] Assign the authorized administrator account (waiting for user email and first sign-in).

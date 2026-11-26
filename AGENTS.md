@@ -10,5 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Keep the retired Lomé URL as an unnested redirect to `/conf` so existing bookmarks work without restoring the removed event page.
+- Render the Lomé event directly on `/conf` from local conference constants; only the existing Tally forms load external content, so public event information never depends on backend availability.
 - Use the public `/auth` page for sign-in and inline editing; fetch editor data only after sign-in through authenticated server functions with server-validated admin roles, so public SSR never calls protected loaders.
 - Validate all editable event content with the shared schema and persist it in the event content table; never derive edit privileges from browser state.

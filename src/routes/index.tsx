@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Section, Eyebrow, SectionTitle, Lead, CTALink, NumberedCard } from "@/components/site/ui";
+import { event } from '@/lib/conference/content';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,7 +93,7 @@ function useCountdown(target: string) {
 }
 
 function Home() {
-  const c = useCountdown("2027-03-16T09:00:00Z");
+  const c = useCountdown(`${event.startDate}T00:00:00Z`);
 
   return (
     <>
@@ -260,10 +261,10 @@ function Home() {
         <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <Eyebrow>Synca Conf 2027</Eyebrow>
-            <SectionTitle>Dakar — Sénégal · 16–18 mars 2027</SectionTitle>
+             <SectionTitle>Lomé — Togo · 14–15 mai 2027</SectionTitle>
             <Lead>
-              «Former pour l'économie réelle : combler le fossé entre éducation, compétences et
-              emploi dans la Tech en Afrique.»
+               « Made in Africa, Powered by Tech ». Le rendez-vous panafricain des talents,
+               des communautés et de l’innovation technologique. Side event le 13 mai 2027.
             </Lead>
             <div className="mt-8 flex flex-wrap gap-3">
               <CTALink to="/conf">Participer</CTALink>

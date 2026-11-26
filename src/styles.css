@@ -189,6 +189,7 @@
   color: var(--foreground);
 }
 .conference-page h1, .conference-page h2, .conference-page h3 { letter-spacing: 0; }
+.conference-page section[id] { scroll-margin-top: 90px; }
 .conf-hero { position: relative; overflow: hidden; background: var(--ink); color: var(--ink-foreground); }
 .conf-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
 .conf-hero-shade { position: absolute; inset: 0; background: var(--conf-shade); }
